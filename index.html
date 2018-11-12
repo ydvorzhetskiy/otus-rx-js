@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Observables test</title>
+    <!-- !!! old version !!! use rxjs in babel environment instead -->
+    <script src="node_modules/rx/dist/rx.lite.js"></script>
+</head>
+<body>
+<input type="text" id="my"/>
+<script>
+    Rx.Observable.fromEvent(document.getElementById('my'), 'input')
+        .map(({target: {value}}) => value)
+        .scan((x, y) => x + y)
+        .subscribe(value => console.log(value));
+</script>
+</body>
+</html>
