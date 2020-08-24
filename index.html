@@ -10,7 +10,7 @@
 <input type="text" id="my"/>
 <script>
     Rx.Observable.fromEvent(document.getElementById('my'), 'input')
-        .map(({data}) => data)
+        .map( ({data}) => data )
         .scan((x, y) => +x + +y)
         .subscribe(value => console.log(value));
 </script>
